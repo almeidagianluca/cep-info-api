@@ -51,6 +51,10 @@ Este projeto é uma REST API desenvolvida para obter informações adicionais de
 2. **Mongo Express**: `http://localhost:8082/`
 3. **Wiremock**: `http://localhost:8383/`
 
+## Desenho de Solução
+
+![Solution design](solution-design.png)
+
 ## Testes
 
 Para rodar os testes unitários, utilize o comando:

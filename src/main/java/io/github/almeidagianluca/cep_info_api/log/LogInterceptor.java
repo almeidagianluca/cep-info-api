@@ -17,12 +17,15 @@ public class LogInterceptor {
     @Around("@annotation(Loggable)")
     public Object logRequests(ProceedingJoinPoint joinPoint) throws Throwable {
         String api = joinPoint.getSignature().getName();
-
-        ResponseEntity<?> response = (ResponseEntity<?>) joinPoint.proceed();
-
-        String responseData = response.getBody() != null ? response.getBody().toString() : "No data";
-        logRequestService.saveLogRequest(api, responseData, response.getStatusCode().toString());
-
+        ResponseEntity<?> response;
+        try {
+            response = (ResponseEntity<?>) joinPoint.proceed();
+            String responseData = response.getBody() != null ? response.getBody().toString() : "No data";
+            logRequestService.saveLogRequest(api, responseData, response.getStatusCode().toString());
+        }catch (Exception e) {
+            logRequestService.saveLogRequest(api, e.getMessage(), e.getClass().getTypeName());
+            throw e;
+        }
         return response;
     }
 }

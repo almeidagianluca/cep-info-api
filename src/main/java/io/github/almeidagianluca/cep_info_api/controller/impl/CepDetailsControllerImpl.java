@@ -1,6 +1,7 @@
 package io.github.almeidagianluca.cep_info_api.controller.impl;
 
 import io.github.almeidagianluca.cep_info_api.controller.CepDetailsController;
+import io.github.almeidagianluca.cep_info_api.log.Loggable;
 import io.github.almeidagianluca.cep_info_api.model.CepDetails;
 import io.github.almeidagianluca.cep_info_api.service.CepDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class CepDetailsControllerImpl implements CepDetailsController {
     CepDetailsService cepDetailsService;
 
     @GetMapping("/{cep}")
+    @Loggable
     public ResponseEntity<CepDetails> getProductByCode(@PathVariable String cep) {
         return cepDetailsService.getCepDetails(cep);
     }

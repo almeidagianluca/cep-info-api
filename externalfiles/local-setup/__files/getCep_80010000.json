@@ -1,10 +1,10 @@
 {
   "cep": "80010000",
-  "uf": "PR",
-  "cidade": "Curitiba",
-  "bairro": "Centro",
-  "logradouro": "Rua XV de Novembro",
-  "complemento": "próximo ao Calçadão",
-  "regiao": "Sul",
-  "ddd": "41"
+  "state": "PR",
+  "city": "Curitiba",
+  "neighborhood": "Centro",
+  "street": "Rua XV de Novembro",
+  "additionalInfo": "near the Pedestrian Mall",
+  "region": "South",
+  "areaCode": "41"
 }

@@ -7,11 +7,11 @@ import lombok.Data;
 @Builder
 public class CepDetails {
     private String cep;
-    private String uf;
-    private String cidade;
-    private String bairro;
-    private String logradouro;
-    private String complemento;
-    private String regiao;
-    private String ddd;
+    private String state;
+    private String city;
+    private String neighborhood;
+    private String street;
+    private String additionalInfo;
+    private String region;
+    private String areaCode;
 }

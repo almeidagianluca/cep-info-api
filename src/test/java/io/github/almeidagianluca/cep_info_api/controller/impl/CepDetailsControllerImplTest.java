@@ -28,13 +28,13 @@ class CepDetailsControllerImplTest {
         String cep = "01001-000";
         CepDetails expectedDetails = CepDetails.builder()
                 .cep(cep)
-                .uf("SP")
-                .cidade("São Paulo")
-                .bairro("Sé")
-                .logradouro("Praça da Sé")
-                .complemento("lado ímpar")
-                .regiao("Sudeste")
-                .ddd("11")
+                .state("SP")
+                .city("São Paulo")
+                .neighborhood("Sé")
+                .street("Praça da Sé")
+                .additionalInfo("lado ímpar")
+                .region("Sudeste")
+                .areaCode("11")
                 .build();
 
         ResponseEntity<CepDetails> responseEntity = new ResponseEntity<>(expectedDetails, OK);

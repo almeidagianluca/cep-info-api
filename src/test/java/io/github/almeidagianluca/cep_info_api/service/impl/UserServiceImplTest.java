@@ -32,7 +32,7 @@ class UserServiceImplTest {
     void createUserFromBranchCity() throws Exception {
         // Arrange
         User user = User.builder().cep("01001000").build();
-        CepDetails cepDetails = CepDetails.builder().cidade("São Paulo").build();
+        CepDetails cepDetails = CepDetails.builder().city("São Paulo").build();
         when(cepDetailsService.getCepDetails("01001000")).thenReturn(ResponseEntity.ok(cepDetails));
         when(userRepository.save(user)).thenReturn(user);
 
@@ -49,7 +49,7 @@ class UserServiceImplTest {
     void createUserOutOfBranchCity() {
         // Arrange
         User user = User.builder().cep("80010000").build();
-        CepDetails cepDetails = CepDetails.builder().cidade("Curitiba").build();
+        CepDetails cepDetails = CepDetails.builder().city("Curitiba").build();
         when(cepDetailsService.getCepDetails("80010000")).thenReturn(ResponseEntity.ok(cepDetails));
 
         // Act, Assert

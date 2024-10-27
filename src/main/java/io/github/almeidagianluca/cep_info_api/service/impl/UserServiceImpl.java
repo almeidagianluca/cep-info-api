@@ -32,6 +32,6 @@ public class UserServiceImpl implements UserService {
 
     private boolean validateUser(User user) {
         CepDetails cepDetails = cepDetailsService.getCepDetails(user.getCep()).getBody();
-        return hasBranchInCity(Objects.requireNonNull(cepDetails).getCidade());
+        return hasBranchInCity(Objects.requireNonNull(cepDetails).getCity());
     }
 }
